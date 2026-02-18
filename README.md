@@ -8,7 +8,7 @@ Code for **Modeling Higher-Order Brain Interactions via a Multi-View Information
 
 ## 📋 Overview
 
-![Motivation](images/compare_with_hypergraph.png)
+![Motivation](images/motivation.png)
 The motivation of MvHo-IB++: compared with pairwise graph/hypergraph-style modeling, psychiatric fMRI analysis benefits from explicitly modeling higher-order interactions, where group-level dependencies cannot be reduced to simple pairwise relations.
 
 ![Dataset computing](images/data.png)
