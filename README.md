@@ -49,7 +49,7 @@ This figure gives an intuition of O-information by highlighting redundancy-syner
 ## 📦 Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/zky04/MvHo-IB-Plus
 cd MvHo-IB++
 pip install -r requirements.txt
 pip install torch-geometric
