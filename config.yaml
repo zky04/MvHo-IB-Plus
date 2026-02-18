@@ -1,0 +1,83 @@
+# MvHo-IB++ experiment configuration
+
+# Current dataset key
+dataset_name: "UCLA"
+
+training:
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  num_epochs: 100
+  batch_size: 8
+  patience: 30
+
+  # View-1 (GIN)
+  gin_embedding_dim: 64
+  gin_hidden_dims: [128, 256, 512]
+
+  # View-2 (Brain3DCNN)
+  cnn3d_embedding_dim: 64
+  cnn3d_channels: [32, 64]
+
+  # View-3 (Brain4DCNN)
+  cnn4d_embedding_dim: 64
+  cnn4d_channels: [16, 32]
+
+  dropout_rate: 0.5
+
+information_bottleneck:
+  sigma: 5.0
+  alpha: 1.01
+  beta_gin: 0.01
+  beta_3d: 0.01
+  beta_4d: 0.01
+  beta_mutual: 0.01
+  use_ib: true
+
+compute:
+  method: "gauss"     # gauss | random
+  regularization: 1.0e-6
+  num_random_vectors: 50
+  alpha: 1.01
+
+datasets:
+  UCLA:
+    num_regions: 105
+    num_classes: 2
+    x1_path: "dataset/ucla/x1_ucla.pt"
+    x2_path: "dataset/ucla/x2_o3_ucla.pt"
+    x3_path: "dataset/ucla/x3_o4_ucla.pt"
+
+  ADNI:
+    num_regions: 116
+    num_classes: 2
+    x1_path: "dataset/adni/x1_adni.pt"
+    x2_path: "dataset/adni/x2_o3_adni.pt"
+    x3_path: "dataset/adni/x3_o4_adni.pt"
+
+  ABIDE:
+    num_regions: 116
+    num_classes: 2
+    x1_path: "dataset/abide/x1_abide.pt"
+    x2_path: "dataset/abide/x2_o3_abide.pt"
+    x3_path: "dataset/abide/x3_o4_abide.pt"
+
+  MDD:
+    num_regions: 116
+    num_classes: 2
+    x1_path: "dataset/mdd/x1_mdd.pt"
+    x2_path: "dataset/mdd/x2_o3_mdd.pt"
+    x3_path: "dataset/mdd/x3_o4_mdd.pt"
+
+data_split:
+  test_size: 0.1
+  val_size: 0.2
+  random_state: 42
+
+ablation:
+  use_gin: true
+  use_brain3dcnn: true
+  use_brain4dcnn: true
+
+experiment:
+  seed: 42
+  device: "auto"
