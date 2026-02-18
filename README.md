@@ -8,13 +8,13 @@ Code for **Modeling Higher-Order Brain Interactions via a Multi-View Information
 
 ## 📋 Overview
 
-![Motivation](images/compare_with_hypergraph.pdf)
+![Motivation](images/compare_with_hypergraph.png)
 The motivation of MvHo-IB++: compared with pairwise graph/hypergraph-style modeling, psychiatric fMRI analysis benefits from explicitly modeling higher-order interactions, where group-level dependencies cannot be reduced to simple pairwise relations.
 
-![Dataset computing](images/data.pdf)
+![Dataset computing](images/data.png)
 The data construction pipeline. From each subject, we build three complementary views: a Renyi-MI-based pairwise graph (top-30% sparsification), a third-order O-information tensor, and a fourth-order O-information tensor.
 
-![MvHo-IB++ Framework Overview](images/framework.pdf)
+![MvHo-IB++ Framework Overview](images/framework.png)
 Full MvHo-IB++ architecture. The three views are encoded by GIN, Brain3DCNN, and Brain4DCNN, then fused for diagnosis under information bottleneck regularization to improve representation quality and generalization.
 
 MvHo-IB++ extends MvHo-IB from two-view modeling to **three-view modeling**:
@@ -25,15 +25,15 @@ MvHo-IB++ extends MvHo-IB from two-view modeling to **three-view modeling**:
 
 Three encoders are used respectively: **GIN**, **Brain3DCNN**, and **Brain4DCNN**. Their latent representations are fused for final diagnosis under information bottleneck regularization.
 
-![O-information](images/vienn.pdf)
+![O-information](images/vienn.png)
 This figure gives an intuition of O-information by highlighting redundancy-synergy organization among multiple variables, explaining why modeling 3rd- and 4th-order interactions can provide complementary signals beyond pairwise connectivity.
 
 ## 📊 Supported Datasets
 
 - **[ABIDE](https://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html)**
 - **[REST-meta-MDD](https://rfmri.org/REST-meta-MDD)**
-- **UCLA**
 - **[ADNI](https://adni.loni.usc.edu/)**
+- **UCLA**
 
 ## 🛠️ Requirements
 
@@ -97,7 +97,7 @@ python main.py --config config.yaml
 
 ## 🧠 BrainCNN Architecture
 
-![Brain4DCNN Architecture](images/brain4dcnn.pdf)
+![Brain4DCNN Architecture](images/brain4dcnn.png)
 
 MvHo-IB++ includes both **Brain3DCNN** (for 3D tensors) and **Brain4DCNN** (for 4D tensors) for high-order interaction modeling.
 
@@ -127,6 +127,5 @@ MvHo-IB++/
 │       ├── info_bottleneck.py
 │       └── oinfo_compute.py
 ├── dataset/
-├── computed/
-└── images/
+└── computed/
 ```
