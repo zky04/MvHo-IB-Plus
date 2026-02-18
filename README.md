@@ -8,7 +8,9 @@ Code for **Modeling Higher-Order Brain Interactions via a Multi-View Information
 
 ## 📋 Overview
 
-![Motivation](images/motivation.png)
+<p align="center">
+  <img src="images/motivation.png" alt="Motivation" width="60%">
+</p>
 The motivation of MvHo-IB++: compared with pairwise graph/hypergraph-style modeling, psychiatric fMRI analysis benefits from explicitly modeling higher-order interactions, where group-level dependencies cannot be reduced to simple pairwise relations.
 
 ![Dataset computing](images/data.png)
@@ -25,7 +27,9 @@ MvHo-IB++ extends MvHo-IB from two-view modeling to **three-view modeling**:
 
 Three encoders are used respectively: **GIN**, **Brain3DCNN**, and **Brain4DCNN**. Their latent representations are fused for final diagnosis under information bottleneck regularization.
 
-![O-information](images/vienn.png)
+<p align="center">
+  <img src="images/vienn.png" alt="O-information" width="45%">
+</p>
 This figure gives an intuition of O-information by highlighting redundancy-synergy organization among multiple variables, explaining why modeling 3rd- and 4th-order interactions can provide complementary signals beyond pairwise connectivity.
 
 ## 📊 Supported Datasets
